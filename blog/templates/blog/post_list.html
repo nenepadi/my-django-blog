@@ -11,23 +11,13 @@
         Django Girls!
     </nav>
     <main>
-        <article>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Do sint occaecat consequat consequat. Labore Lorem dolore duis ut non ad dolor esse labore. In elit occaecat eu culpa. Et sit labore ex ad et dolor ipsum nisi ea eu do adipisicing occaecat. Sit eiusmod aliqua velit adipisicing veniam irure ad cupidatat sit veniam nostrud voluptate. In irure laborum incididunt consectetur laborum ipsum id velit cillum sint Lorem.</p>
-        </article>
-
-        <article>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Do sint occaecat consequat consequat. Labore Lorem dolore duis ut non ad dolor esse labore. In elit occaecat eu culpa. Et sit labore ex ad et dolor ipsum nisi ea eu do adipisicing occaecat. Sit eiusmod aliqua velit adipisicing veniam irure ad cupidatat sit veniam nostrud voluptate. In irure laborum incididunt consectetur laborum ipsum id velit cillum sint Lorem.</p>
-        </article>
-
-        <article>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My third post</a></h2>
-            <p>Do sint occaecat consequat consequat. Labore Lorem dolore duis ut non ad dolor esse labore. In elit occaecat eu culpa. Et sit labore ex ad et dolor ipsum nisi ea eu do adipisicing occaecat. Sit eiusmod aliqua velit adipisicing veniam irure ad cupidatat sit veniam nostrud voluptate. In irure laborum incididunt consectetur laborum ipsum id velit cillum sint Lorem.</p>
-        </article>
+        {% for post in posts %}
+            <article>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
     </main>
 </body>
 </html>
